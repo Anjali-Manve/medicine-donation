@@ -2,7 +2,8 @@ import Donor from "../models/Donor.js";
 import Medicine from "../models/Medicine.js";
 
 // ✅ Get all donors
-export const getDonors = async (req, res) => {
+export const getDonors = async (req, res) => { 
+  
   try {
     const donors = await Donor.find().populate("medicines");
     res.json(donors);
