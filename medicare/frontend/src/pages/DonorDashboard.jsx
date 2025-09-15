@@ -17,7 +17,7 @@ export default function DonorDashboard() {
   const fetchMedicines = async () => {
     if (!token) return; // Ensure token exists
     try {
-      const res = await axios.get("http://localhost:5000/api/medicine/my-medicines", {
+      const res = await axios.get("https://medicine-donation-g74n.onrender.com/api/medicine/my-medicines", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setMedicines(res.data);
@@ -61,7 +61,7 @@ export default function DonorDashboard() {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/medicine", { // Send form data with correct field names
+      await axios.post("https://medicine-donation-g74n.onrender.com/api/medicine", { // Send form data with correct field names
         name: form.name,
         expiry: form.expiryDate, // Use 'expiry' to match backend schema
         quantity: form.quantity,
@@ -82,7 +82,7 @@ export default function DonorDashboard() {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this medicine?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/medicine/${id}`, {
+        await axios.delete(`https://medicine-donation-g74n.onrender.com/api/medicine/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         alert('Medicine deleted successfully!');
@@ -97,7 +97,7 @@ export default function DonorDashboard() {
   // Approve a pending request
   const handleApprove = async (id) => {
     try {
-      await axios.post(`http://localhost:5000/api/medicine/${id}/approve`, {}, {
+      await axios.post(`https://medicine-donation-g74n.onrender.com/api/medicine/${id}/approve`, {}, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert('Request approved');
@@ -111,7 +111,7 @@ export default function DonorDashboard() {
   // Reject a pending request
   const handleReject = async (id) => {
     try {
-      await axios.post(`http://localhost:5000/api/medicine/${id}/reject`, {}, {
+      await axios.post(`https://medicine-donation-g74n.onrender.com/api/medicine/${id}/reject`, {}, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert('Request rejected');

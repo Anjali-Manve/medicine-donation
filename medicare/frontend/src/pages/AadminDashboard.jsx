@@ -35,16 +35,16 @@ export default function AdminDashboard() {
       setError(null);
       
       const [statsRes, donorsRes, receiversRes, medicinesRes] = await Promise.all([
-        axios.get("http://localhost:5000/api/admin/stats", {
+        axios.get("https://medicine-donation-g74n.onrender.com/api/admin/stats", {
           headers: { Authorization: `Bearer ${token}` }
         }),
-        axios.get("http://localhost:5000/api/admin/donors", {
+        axios.get("https://medicine-donation-g74n.onrender.com/api/admin/donors", {
           headers: { Authorization: `Bearer ${token}` }
         }),
-        axios.get("http://localhost:5000/api/admin/receivers", {
+        axios.get("https://medicine-donation-g74n.onrender.com/api/admin/receivers", {
           headers: { Authorization: `Bearer ${token}` }
         }),
-        axios.get("http://localhost:5000/api/admin/medicines", {
+        axios.get("https://medicine-donation-g74n.onrender.com/api/admin/medicines", {
           headers: { Authorization: `Bearer ${token}` }
         })
       ]);

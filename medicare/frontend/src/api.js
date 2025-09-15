@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "http://localhost:5000/api" });
+const API = axios.create({ baseURL: "https://medicine-donation-g74n.onrender.com/api" });
 
 // Add token automatically
 API.interceptors.request.use((req) => {

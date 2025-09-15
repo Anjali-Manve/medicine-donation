@@ -15,7 +15,7 @@ export default function Reviews({ donorId }) {
         return;
       }
 
-      const res = await axios.get(`http://localhost:5000/api/review/${donorId}`, {
+      const res = await axios.get(`https://medicine-donation-g74n.onrender.com/api/review/${donorId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -41,7 +41,7 @@ export default function Reviews({ donorId }) {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "http://localhost:5000/api/review",
+        "https://medicine-donation-g74n.onrender.com/api/review",
         { text },
         {
           headers: {

@@ -8,7 +8,7 @@ export default function ForgotPassword() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/auth/forgot-password", { email });
+      await axios.post("https://medicine-donation-g74n.onrender.com/api/auth/forgot-password", { email });
       setSent(true);
     } catch (err) {
       alert(err.response?.data?.message || "Failed to send reset link");

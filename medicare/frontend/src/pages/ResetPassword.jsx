@@ -12,7 +12,7 @@ export default function ResetPassword() {
     e.preventDefault();
     if (password !== confirm) return alert("Passwords do not match");
     try {
-      await axios.post(`http://localhost:5000/api/auth/reset-password/${token}`, { password });
+      await axios.post(`https://medicine-donation-g74n.onrender.com/api/auth/reset-password/${token}`, { password });
       alert("Password reset successful. Please login.");
       navigate("/login");
     } catch (err) {

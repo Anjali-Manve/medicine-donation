@@ -17,7 +17,7 @@ export default function Medicines() {
   const fetchMedicines = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/medicine/my-medicines",
+        "https://medicine-donation-g74n.onrender.com/api/medicine/my-medicines",
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setMedicines(data || []);
@@ -40,7 +40,7 @@ export default function Medicines() {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/medicine", form, {
+      await axios.post("https://medicine-donation-g74n.onrender.com/api/medicine", form, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success("Medicine added ");
@@ -55,7 +55,7 @@ export default function Medicines() {
   const handleApprove = async (id) => {
     try {
       await axios.post(
-        `http://localhost:5000/api/medicine/${id}/approve`,
+        `https://medicine-donation-g74n.onrender.com/api/medicine/${id}/approve`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -70,7 +70,7 @@ export default function Medicines() {
   const handleReject = async (id) => {
     try {
       await axios.post(
-        `http://localhost:5000/api/medicine/${id}/reject`,
+        `https://medicine-donation-g74n.onrender.com/api/medicine/${id}/reject`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );

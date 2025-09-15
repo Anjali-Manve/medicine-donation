@@ -27,7 +27,7 @@ export default function Home() {
   // Fetch recent reviews
   const fetchReviews = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/review", {
+      const res = await axios.get("https://medicine-donation-g74n.onrender.com/api/review", {
         headers: token ? { Authorization: `Bearer ${token}` } : {},
       });
 
@@ -43,7 +43,7 @@ export default function Home() {
   // Fetch all available medicines
   const fetchAvailableMedicines = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/medicine", {
+      const res = await axios.get("https://medicine-donation-g74n.onrender.com/api/medicine", {
         headers: token ? { Authorization: `Bearer ${token}` } : {},
       });
       // Filter for 'available' status
@@ -77,7 +77,7 @@ export default function Home() {
 
     try {
       await axios.post(
-        `http://localhost:5000/api/medicine/request/${medicineId}`,
+        `https://medicine-donation-g74n.onrender.com/api/medicine/request/${medicineId}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -93,7 +93,7 @@ export default function Home() {
     if (!user || user.role !== 'receiver') return;
     try {
       await axios.post(
-        `http://localhost:5000/api/medicine/${medicineId}/receive`,
+        `https://medicine-donation-g74n.onrender.com/api/medicine/${medicineId}/receive`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );

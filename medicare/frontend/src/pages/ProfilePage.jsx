@@ -21,14 +21,14 @@ export default function Profile() {
   const buildProfileImageUrl = (val) => {
     if (!val) return null;
     if (val.startsWith("http")) return val;
-    if (val.startsWith("/uploads/")) return `http://localhost:5000${val}`;
-    return `http://localhost:5000/uploads/${val}`;
+    if (val.startsWith("/uploads/")) return `https://medicine-donation-g74n.onrender.com${val}`;
+    return `https://medicine-donation-g74n.onrender.com/uploads/${val}`;
   };
 
   // Fetch Profile
   const fetchProfile = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/api/profile", {
+      const { data } = await axios.get("https://medicine-donation-g74n.onrender.com/api/profile", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProfile(data);
@@ -53,7 +53,7 @@ export default function Profile() {
   const handleEditSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put("http://localhost:5000/api/profile", editForm, {
+      await axios.put("https://medicine-donation-g74n.onrender.com/api/profile", editForm, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success("Profile updated ");
@@ -75,7 +75,7 @@ export default function Profile() {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/profile/upload-photo",
+        "https://medicine-donation-g74n.onrender.com/api/profile/upload-photo",
         formData,
         {
           headers: {

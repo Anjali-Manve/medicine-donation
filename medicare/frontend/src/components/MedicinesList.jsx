@@ -12,7 +12,7 @@ function MedicinesList() {
   useEffect(() => {
     const fetchMedicines = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/medicine', {
+        const res = await axios.get('https://medicine-donation-g74n.onrender.com/api/medicine', {
           headers: token ? { Authorization: `Bearer ${token}` } : {},
         });
         setMedicines(res.data);

@@ -15,7 +15,7 @@ export default function ReceiverDashboard() {
   const fetchMedicines = async () => {
     try {
       // const token = localStorage.getItem("token"); // Already getting from AuthContext
-      const res = await axios.get("http://localhost:5000/api/medicine", {
+      const res = await axios.get("https://medicine-donation-g74n.onrender.com/api/medicine", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setMedicines(res.data);
@@ -34,7 +34,7 @@ export default function ReceiverDashboard() {
     try {
       // const token = localStorage.getItem("token"); // Already getting from AuthContext
       await axios.post(
-        `http://localhost:5000/api/medicine/request/${id}`,
+        `https://medicine-donation-g74n.onrender.com/api/medicine/request/${id}`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -52,7 +52,7 @@ export default function ReceiverDashboard() {
   const handleConfirmReceived = async (id) => {
     try {
       await axios.post(
-        `http://localhost:5000/api/medicine/${id}/receive`,
+        `https://medicine-donation-g74n.onrender.com/api/medicine/${id}/receive`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },

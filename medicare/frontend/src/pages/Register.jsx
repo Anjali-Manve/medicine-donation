@@ -63,7 +63,7 @@ export default function Register() {
     try {
       // Ensure backend is receiving JSON
       const response = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://medicine-donation-g74n.onrender.com/api/auth/register",
         form,
         {
           headers: { "Content-Type": "application/json" },
@@ -88,7 +88,7 @@ export default function Register() {
     console.log("OTP provided:", otp);
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/verify-otp",
+        "https://medicine-donation-g74n.onrender.com/api/auth/verify-otp",
         JSON.stringify({
           email: form.email,
           otp,
