@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 // ✅ Case-sensitive imports
 import Navbar from "./Navbar.jsx";
-import Footer from "./Footer";
+import Footer from "./Footer.jsx";
 
 const Layout = () => {
   return (
