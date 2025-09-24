@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Navbar from './Navbar'; // Assuming Navbar is in the same components directory
-import Footer from './Footer'; // Assuming Footer is in the same components directory
+import Navbar from './Navbar.jsx'; // Assuming Navbar is in the same components directory
+import Footer from './Footer.jsx'; // Assuming Footer is in the same components directory
 
 const Layout = () => {
   return (
